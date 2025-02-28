@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            height: 60px;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ff00ff;
+        }
+        .bodypart {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px;
+            text-align: left;
+        }
+        h2 {
+            font-size: 3em;
+            background: linear-gradient(90deg, #ff00ff, #8000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .profile-img img {
+            width: 180px;
+            border-radius: 40px;
+            box-shadow: 5px 8px #888888;
+        }
+        .about-section {
+            background: #ddd7ed;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .footer-social a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .footer-social a:hover {
+            color: #ff00ff;
+        }
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Maybelle logo.png" alt="Logo" class="logo">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Technologies</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
+
+    <section class="bodypart" id="home">
+        <div>
+            <h2>Marian Maybelle Chua</h2>
+            <p>I am Marian, a web developer with a passion for creating responsive websites.</p>
+        </div>
+        <div class="profile-img">
+            <img src="Profile Pic.jpg" alt="Profile Image">
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>About Me</h2>
+            <p>
+                Hi! I'm <strong>Marian Maybelle Chua</strong>, a passionate web developer with expertise in creating 
+                responsive and dynamic websites. I specialize in front-end and back-end development, ensuring 
+                that every project I work on is visually appealing and fully functional.
+            </p>
+            <p>
+                With experience in HTML, CSS, JavaScript, and modern frameworks like React and Vue.js, 
+                I aim to craft seamless user experiences. I enjoy solving complex problems and continuously 
+                learning new technologies to stay ahead in the ever-evolving tech industry.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Contact Me</h3>
+                <p>Email: <a href="mailto:marian@example.com">marianmaybellechua.com</a></p>
+                <p>Phone: +639212322353</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Marian Maybelle Chua. All rights reserved.</p>
+    </footer>
+</body>
+</html>
