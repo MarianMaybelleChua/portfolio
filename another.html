@@ -1,89 +1,392 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #0a0a0a;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1em;
-        }
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-            text-align: left;
-        }
-        h1 {
-            font-size: 3em;
-            background: linear-gradient(90deg, #ff00ff, #8000ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(90deg, #ff00ff, #8000ff);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .profile-img img {
-            width: 300px;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">MARIAN MAYBELLE CHUA</div>
-            <ul>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#technologies">TECHNOLOGIES</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-            <div class="lang-switch">ENG 🌐</div>
-        </nav>
-    </header>
-    <section class="hero">
-        <div class="content">
-            <h1>FRONTEND <br> DEVELOPER</h1>
-            <p>I am Marian a web developer with no passion and dedication for creating a responsive website.</p>
-            <a href="#" class="btn">VIEW MY WORK</a>
-        </div>
-        <div class="profile-img">
-            <img src="Maybelle logo.png" alt="Profile Image">
-        </div>
-    </section>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, rgb(230, 231, 223), rgb(239, 175, 229));
+}
+
+header {
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 9px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons (Moved to Right) */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff00ff;
+}
+
+.bodypart {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 100px;
+    text-align:left;
+}
+
+h2 {
+    font-size: 3em;
+    background: linear-gradient(90deg, #ff00ff, #8000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff00ff, #8000ff);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.profile-img img {
+    width: 300px;
+
+}
+
+/* About Section Styling */
+.about-section {
+    background: #ddd7ed;
+    padding: 100px 20px;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Educational Background Styling */
+.education {
+    margin-top: 0px;
+    text-align: left;
+
+}
+
+.education h3 {
+    font-size: 1.8em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.education-entry {
+    display: flex;
+    align-items: center; /* Align logo and text */
+    gap: 15px; /* Space between logo and text */
+    padding: 20px;
+    border-left: 4px solid #8000ff;
+    background: #f8f8f8;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Add spacing between entries */
+}
+
+.education-entry.capitol {
+    justify-content: flex-end; /* Move content to the right */
+    text-align: right; /* Align text to the right */
+    border-left: none; /* Remove left border */
+    border-right: 4px solid #8000ff; /* Add border on the right */
+}
+
+/* Reverse order of Capitol University content and logo */
+.education-entry.capitol .education-logo {
+    order: 2; /* Move the logo to the right side */
+}
+
+.education-entry.capitol .education-content {
+    order: 1; /* Move the text to the left */
+}
+
+.education-logo {
+    width: 100px; /* Adjust logo size */
+    height: auto;
+    border-radius: 5px;
+}
+
+.education-content {
+    flex: 1; /* Allow text to take remaining space */
+}
+
+.education-entry h4 {
+    font-size: 1.4em;
+    color: #8000ff;
+    margin-bottom: 5px;
+}
+
+.education-entry p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Technologies Section */
+.skills-section {
+    background: #0d1117;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.tech-title {
+    font-size: 2.5em;
+    background: linear-gradient(90deg, #ff00ff, #8000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tech-description {
+    font-size: 1.2em;
+    margin: 10px 0 30px;
+}
+
+.tech-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.tech-icons img {
+    width: 70px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tech-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Portfolio Section */
+.projects-section {
+    background: #ddd7ed;
+    padding: 100px 20px;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+.projects-icon img {
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Footer Styling */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer-info, .footer-social {
+    flex: 1;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ff00ff;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 14px;
+}
+        </style>
+        <title>My Portfolio</title>
+        <!-- Font Awesome for Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <img src="Maybelle logo.png" alt="Logo" class="logo">
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Technologies</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </header>
+
+            <!-- Body Section -->
+            <div class="container">
+                <section class="bodypart">
+                    <div>
+                        <h2>Marian Maybelle Chua</h2>
+                        <p>I am Marian, a web developer with no passion and dedication for creating a responsive website.</p>
+                        <a href="#" class="btn">VIEW MY WORK</a>
+                    </div>
+                    <div class="profile-img">
+                        <img src="Profile pic2.png" alt="Profile Image">
+                    </div>
+                </section>
+            </div>
+
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I'm <strong>Marian Maybelle Chua</strong>, a passionate web developer with expertise in creating 
+                    responsive and dynamic websites. I specialize in front-end development, ensuring 
+                    that every project I work on is visually appealing.
+                </p>
+
+                <!-- Educational Background Section -->
+                <div class="education">
+                    <h3>Educational Background</h3>
+
+                    <div class="education-entry">
+                        <img src="USTP Logo.png" alt="USTP Logo" class="education-logo">
+                        <div class="education-content">
+                            <h4>2020 – 2024</h4>
+                            <p><strong>University of Science and Technology of Southern Philippines</strong></p>
+                            <p>Claro M. Recto Ave., Lapasan, Cagayan De Oro City, 9000 Misamis Oriental</p>
+                            <p><em>Bachelor of Science in Information Technology</em></p>
+                        </div>
+                    </div>
+
+                    <div class="education-entry capitol">
+                        <img src="USTP Logo.png" alt="Capitol University Logo" class="education-logo">
+                        <div class="education-content">
+                            <h4>2018 - 2020</h4>
+                            <p><strong>Capitol University - Senior High School</strong></p>
+                            <p>Corrales Ave., Cagayan De Oro City, 9000 Misamis Oriental</p>
+                            <p><em>STEM: Programming</em></p>
+                        </div>
+                    </div>
+
+                    <div class="education-entry">
+                        <img src="USTP Logo.png" alt="Salay NHS Logo" class="education-logo">
+                        <div class="education-content">
+                            <h4>2014 - 2018</h4>
+                            <p><strong>Salay National High School</strong></p>
+                            <p>Poblacion, Salay, 9007 Misamis Oriental</p>
+                            <p><em>Grade 7 - Grade 10 (With High Honor)</em></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section id="skills" class="skills-section">
+            <h2 class="tech-title">Technologies</h2>
+            <p class="tech-description">The skills, tools, and technologies I use:</p>
+            <div class="tech-icons">
+                <img src="html-icon.png" alt="HTML">
+                <img src="css-icon.png" alt="CSS">
+                <img src="js-icon.png" alt="JavaScript">
+                <img src="figma-icon.png" alt="Figma">
+                <img src="react-icon.png" alt="React">
+                <img src="git-icon.png" alt="Git">
+                <img src="c++-icon.png" alt="C++">
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="projects-section">
+            <h2 class="projects-title">My Portfolio</h2>
+            <div class="projects-icon">
+                <a href="https://youtu.be/jvws3gEnBvU?si=se4ECEUXWGMXq0mD" target="_blank">
+                    <img src="LumoTech.png" alt="LumoTech">
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-info">
+                    <h3>Contact Me</h3>
+                    <p>Email: <a href="mailto:marian@example.com">marianmaybellechua.com</a></p>
+                    <p>Phone: +639212322353</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Marian Maybelle Chua. All rights reserved.</p>
+        </footer>
+    </body>
 </html>

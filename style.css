@@ -1,20 +1,35 @@
-body {
+*{
+    box-sizing: border-box;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    padding: 0;
 }
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
 
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
 header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100%;
     background: #333;
     color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .logo {
     height: 60px;
+    width: auto;
 }
 
 nav {
@@ -23,7 +38,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     margin: 0 9px;
     font-size: 15px;
@@ -49,25 +64,57 @@ nav a:hover {
 .social-icons a:hover {
     color: #ff00ff;
 }
-
-.bodypart {
+/*home section*/
+.home-section {
     display: flex;
-    align-items: center;
-    justify-content:space-between;
-    padding: 100px;
-    text-align:left;
+    align-items:center;
+    justify-content:center;
+    padding: 5rem 5rem;
+    gap: 5rem;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
-h2 {
+.profile-img img {
+    width: 50rem;
+    flex: auto;
+}
+.homeText{
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 2rem;
+}
+.homeText h1 {
     font-size: 3em;
     background: linear-gradient(90deg, #ff00ff, #8000ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.profile-img img {
-    width: 300px;
-    border-radius: 40px;
-    box-shadow: 5px 8px #888888;
+.homeText p{
+    font-size: 1rem;
+    color: #000000;
+}
+
+.homeText button {
+    background: linear-gradient(90deg, #ff00ff, #8000ff);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+}
+
+.homeText button a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.homeText button:hover {
+    transform: scale(1.1);
 }
 
 /* About Section Styling */
@@ -97,12 +144,10 @@ h2 {
 
 /* Educational Background Styling */
 .education {
-    margin-top: 40px;
+    margin-top: 0px;
     text-align: left;
-    background: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .education h3 {
@@ -111,20 +156,57 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
-
 .education-entry {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .50);
     margin-bottom: 20px;
-    padding: 10px;
-    border-left: 4px solid #8000ff;
-    background: #f8f8f8;
-    border-radius: 5px;
 }
 
-.education-entry h4 {
-    font-size: 1.4em;
-    color: #8000ff;
+.education-logo {
+    width: 160px; /* Adjust logo size */
+    height: 170px;
+    border-radius: 5px;
+    object-fit: cover; /* Ensures logo fits neatly */
+}
+
+.education-content {
+    flex: 1;
+    padding-left: 20px; /* Adjust spacing from logo */
+}
+
+.education-content h4 {
+    font-size: 1.5em;
+    color: #0d47a1;
     margin-bottom: 5px;
 }
+
+.education-content p {
+    font-size: 1em;
+    color: #555;
+    margin: 2px 0;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .education-entry {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .education-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .education-content {
+        padding-left: 0;
+    }
+}
+
 
 .education-entry p {
     margin: 5px 0;
@@ -133,11 +215,21 @@ h2 {
 }
 
 /* Technologies Section */
-.skills-section {
-    background: #0d1117;
-    color: white;
+.tech-container {
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
     text-align: center;
-    padding: 100px 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    background-color: #ddd7ed;
+    border-radius: 10px;
+}
+.tech-section {
+    background-color: #ffffff;
+    padding: 5rem 2rem;
+
 }
 
 .tech-title {
@@ -154,13 +246,15 @@ h2 {
 
 .tech-icons {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 1rem;
+    width: 80%;
 }
 
 .tech-icons img {
-    width: 60px;
+    min-width: 5rem;
+    height: 7rem;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -171,14 +265,142 @@ h2 {
 /* Portfolio Section */
 .projects-section {
     background: #ddd7ed;
-    padding: 100px 20px;
+    padding: 50px 20px;
     text-align: center;
-    scroll-behavior: smooth;
 }
 
-.projects-icon img {
-    width: 300px;
+/* Container for Project Boxes */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Individual Project Boxes */
+.project-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px;
     transition: transform 0.3s ease-in-out;
+}
+
+.project-box img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+}
+
+.project-box h3 {
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.project-box p {
+    font-size: 1em;
+    color: #555;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #ff00ff, #8000ff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.project-link:hover {
+    background: linear-gradient(90deg, #8000ff, #ff00ff);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-box {
+        max-width: 90%; /* Full width on smaller screens */
+    }
+}
+
+
+/* contact Section */
+.contact-section {
+    background: #f0f2ff;
+    padding: 100px 20px;
+    text-align: center;
+}
+.contact-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}
+.contact-title {
+    color: #8000ff;
+}
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 800px;
+    margin: auto;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.contact-image img {
+    width: 300px;
+}
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'FontAwesome', Arial, sans-serif;
+}
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+.submit-btn {
+    background: #8000ff;
+    color: white;
+    padding: 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.submit-btn:hover {
+    background: #5e00cc;
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-image img {
+        width: 200px;
+    }
 }
 
 /* Footer Styling */
